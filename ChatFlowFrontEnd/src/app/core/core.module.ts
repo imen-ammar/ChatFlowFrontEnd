@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormMessageComponent } from './components/form-message/form-message.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
+import { RouterModule } from '@angular/router';
+import { UiModule } from '../ui/ui.module';
 
 
 
@@ -13,12 +15,12 @@ import { NavComponent } from './components/nav/nav.component';
     NavComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,RouterModule
   ],
   exports: [
     FormMessageComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,UiModule
   ]
 })
 export class CoreModule { }

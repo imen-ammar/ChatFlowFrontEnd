@@ -1,1 +1,25 @@
-<p>ui works!</p>
+
+<header class="fixed-top">
+
+
+
+</header>
+<!--[ngClass]={'class' : proprieteBoolenne}-->
+<main >
+  <div class="shadow position-fixed">
+  </div>
+  <aside>
+    <div class="scroller">
+      <ng-content select='.tr-nav'></ng-content>
+    </div>
+  </aside>
+  <div class="page">
+    <div class="contents">
+     <!-- ici on ng-content-->
+     <ng-content select=".tr-router"></ng-content>
+    </div>
+    <footer>
+      <ng-content select='.tr-form-message'></ng-content>
+    </footer>
+  </div>
+</main>
