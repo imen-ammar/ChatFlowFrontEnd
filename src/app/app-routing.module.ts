@@ -13,6 +13,14 @@ const routes: Routes = [
         (m) => m.PageNotFoundModule
       ),
   },
+  {
+  path: 'canal',
+
+    loadChildren: () =>
+
+      import('./canal/canal.module').then((m) => m.CanalModule),
+
+  }
 
 ];
 

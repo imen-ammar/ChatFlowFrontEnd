@@ -7,6 +7,8 @@ import { PageAjouterCanalComponent } from './pages/page-ajouter-canal/page-ajout
 import { PageModifierCanalComponent } from './pages/page-modifier-canal/page-modifier-canal.component';
 import { PageSupprimerCanalComponent } from './pages/page-supprimer-canal/page-supprimer-canal.component';
 import { PageListCanalComponent } from './pages/page-list-canal/page-list-canal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormCanalComponent } from './components/form-canal/form-canal.component';
 
 
 @NgModule({
@@ -16,18 +18,26 @@ import { PageListCanalComponent } from './pages/page-list-canal/page-list-canal.
     PageModifierCanalComponent,
     PageSupprimerCanalComponent,
     PageListCanalComponent,
+    FormCanalComponent
+
+
+
 
   ],
   imports: [
     CommonModule,
-    CanalRoutingModule
+    CanalRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
-    CanalComponent,
     PageAjouterCanalComponent,
     PageModifierCanalComponent,
     PageSupprimerCanalComponent,
-    PageListCanalComponent
+    PageListCanalComponent,
+    FormCanalComponent
+
+
+
 
   ]
 })
