@@ -1,7 +1,8 @@
 
 
 
-<button (click)="onGetAllCanal()" class="btn btn-danger">Afficher</button>
+<button (click)="onGetAllCanal()" class="btn btn-danger" routerLink="/canal">Afficher</button>
+
 <div class="container" *ngIf="canal">
   <ul *ngFor="let c of canal ">
     <li>{{c.nom}}</li>
@@ -11,3 +12,6 @@
 
 
 </div>
+
+<a routerLink="/add-canal" routerLinkActive="active" >add canal</a>
+

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Canal } from 'src/app/core/model/canal';
+import { CanalService } from '../../service/canal.service';
 
 @Component({
   selector: 'app-page-ajouter-canal',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAjouterCanalComponent implements OnInit {
 
-  constructor() { }
+  public item:Canal =new Canal();
+
+  constructor(private canalServie:CanalService) { }
 
   ngOnInit(): void {
+    console.log(this.item, "object add canal")
   }
+  onAddCanal(obj:Canal){
+    console.log(obj, "object add canal")
+
+      // this.canalServie.addCanal().subscribe(data=>{
+      //   this.router.navigate([this.canal]);
+      //   console.log(data)
+
+      // })
+
+    }
 
 }

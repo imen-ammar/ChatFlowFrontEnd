@@ -9,16 +9,36 @@ import { environment } from 'src/environments/environment';
 })
 export class CanalService {
 
+  public name:any
 
   private collection$! :Observable<Canal[]>;
 
 
+
   constructor(private http:HttpClient) {
+    let host=environment.host;
+      //  this.collection$=this.http.get<Canal[]>(host+'/canal').pipe(
+
+      //   map((tab) => {
+      //     return tab.map(obj=>{
+      //       return new Canal(obj);
+      //     })
+      //   })
+
+
+
   }
     getAllCanal():Observable<Canal[]>
     {
     let host=environment.host;
     return this.http.get<Canal[]>(host+"/canal/allcanals");
+
+
+  }
+    addCanal(item:Canal)
+    {
+    let host=environment.host;
+    return this.http.post<Canal>(host+"/canal/ajoutcanal",item);
 
 
   }

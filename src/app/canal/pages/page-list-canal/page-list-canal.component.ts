@@ -22,10 +22,10 @@ export class PageListCanalComponent implements OnInit {
     //map((data)=> {data :data}
     //)
     //);
-this.canalServie.getAllCanal().subscribe(data=>{
-  this.canal=data;
-  console.log(data)
-})
+    this.canalServie.getAllCanal().subscribe(data=>{
+      this.canal=data;
+      console.log(data)
+    })
 
   }
 
