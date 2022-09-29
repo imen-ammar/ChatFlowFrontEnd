@@ -19,8 +19,8 @@ import { UiModule } from './ui/ui.module';
     BrowserModule,
     CoreModule,
     AppRoutingModule,
-    HttpClientModule,
     CanalModule,
+    HttpClientModule,
     UiModule
   ],
 

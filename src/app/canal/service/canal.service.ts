@@ -28,12 +28,29 @@ export class CanalService {
     let host = environment.host;
     return this.http.get<Message[]>(host + "/message/recuperer",{params:queryParams});
   }
+  AjouterCanal(nom:string): Observable<Canal[]> {
 
+    let host = environment.host;
+    return this.http.post<Canal[]>(host + "/canal/ajoutcanal",{"nom":nom});
+  }
+  modifierCanal(canal:Canal): Observable<Canal> {
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(canal);
+    let host = environment.host;
+    return this.http.put<Canal>(host + "/canal/modifycanal",body, {'headers':headers});
+  }
+  supprimerCanal(idCanal:number): Observable<any> {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("idCanal",idCanal);
+    let host = environment.host;
+    return this.http.delete(host + "/canal/deletecanal",{params:queryParams});
+  }
   envoyerMessage(message:Message): Observable<any> {
-    const headers = { 'content-type': 'application/json'}
+    const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(message);
     console.log(body);
     let host = environment.host;
     return this.http.post(host + "/message/save", body, {'headers':headers});
   }
+
 }

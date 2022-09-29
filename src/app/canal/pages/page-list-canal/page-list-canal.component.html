@@ -1,21 +1,41 @@
+
+<!--
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+   
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is example from ItSolutionStuff.com
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>-->
+
+
 <div id="canalList" class="canal-list">
   <div class="btn-top-add">
-    <a routerLink="/add-canal" routerLinkActive="active" class="btn btn-outline-secondary" title="Cliquer pour ajouter un canal">➕</a>
-    <!-- <a routerLink=""><button type="button"  title="Cliquer pour ajouter un canal">➕ Ajouter</button></a> -->
+    <!--<a routerLink="/add-canal" routerLinkActive="active" class="btn btn-outline-secondary" title="Cliquer pour ajouter un canal">➕</a>-->
+    <button type="button"  title="Cliquer pour ajouter un canal" (click)="AjouterCanal()">➕ Ajouter</button>
   </div>
-    <ul class="list-unstyled chat-list mt-2 mb-0">
+    <ul class="list-unstyled chat-list mt-2 mb-0" >
         <li *ngFor="let c of canaux " class="clearfix" style="border: 1px solid #eee;border-radius: 8px;background: #eee;margin-bottom: 7px;" (click)="fixerCanalEtRecupererMessagesByCanal(c.id, c.nom)">
             <span>
                 #
             </span>
             <div class="about">
-                <div class="">{{c.nom}}</div>
+                <div class="">{{c.nom}}</div>                                            
             </div>
         </li>
     </ul>
 </div>
 <div class="chat" *ngIf ="!messages">
-    <h1>Veuiller séléctionner un canal svp</h1>
+    <h1>Veuillez séléctionner votre canal svp !</h1>
 </div>
 <div class="chat" *ngIf="messages">
   <div class="chat-header clearfix">
@@ -26,8 +46,8 @@
               </div>
           </div>
           <div class="col-lg-6 hidden-sm text-right">
-              <a class="btn btn-outline-secondary">🖊️</a>
-              <a class="btn btn-outline-secondary">🗑️</a>
+              <a class="btn btn-outline-secondary" (click)="modifierCanal()">🖊️</a>
+              <a class="btn btn-outline-secondary" (click)="supprimerCanal()">🗑️</a>
           </div>
       </div>
   </div>
@@ -37,16 +57,16 @@
               <div class="message-data">
                   <span class="message-data-time">{{m.time}}</span>
               </div>
-              <div class="message my-message">{{m.contenu}}</div>
-          </li>
+              <div class="message my-message">{{m.contenu}}</div>                                    
+          </li>                              
       </ul>
   </div>
   <div class="chat-message clearfix">
       <div class="input-group mb-0">
           <div class="input-group-prepend" (click)="envoyerMessage(messagetext.value)">
-              <span class="input-group-text">✉️</span>
+              <span class="input-group-text" style="border: 1px solid #ddd;background: #17a2b8;">✉️</span>
           </div>
-          <input type="text" class="form-control" placeholder="Saisissez votre message ..." #messagetext (keyup.enter)="envoyerMessage(messagetext.value)">
+          <input type="text" class="form-control" placeholder="Saisissez votre message ..." id="contenuMessage" #messagetext (keyup.enter)="envoyerMessage(messagetext.value);messagetext.value=''">                                    
       </div>
   </div>
 </div>
