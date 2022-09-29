@@ -13,19 +13,20 @@ export class PageAjouterCanalComponent implements OnInit {
 
   public item:Canal =new Canal();
 
-  constructor(private canalServie:CanalService) { }
 
-  ngOnInit(): void {
-    console.log(this.item, "object add canal")
+  constructor(private canalServie:CanalService, public router:Router) { }
+
+  ngOnInit() {
+    // console.log(this.item, "object add canal")
   }
   onAddCanal(obj:Canal){
-    console.log(obj, "object add canal")
+    // console.log(obj, "object add canal")
 
-      // this.canalServie.addCanal().subscribe(data=>{
-      //   this.router.navigate([this.canal]);
-      //   console.log(data)
+      this.canalServie.addCanal(obj).subscribe(data=>{
+        this.router.navigate(['ajoutcanal']);
+        console.log(data)
 
-      // })
+      })
 
     }
 
