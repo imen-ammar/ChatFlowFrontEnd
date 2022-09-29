@@ -1,16 +1,11 @@
-import { Time } from '@angular/common';
-import { Canal } from './canal';
-import { Utilisateur } from './utilisateur';
+import { Time } from "@angular/common";
+import { Utilisateur } from "./utilisateur";
+import { Canal } from "./canal";
 
 export class Message {
-  id!: number;
-  contenu!: string;
-  time!: Time;
-  canal: Canal = new Canal();
-
-  constructor(obj?: Partial<Message>) {
-    if (obj) {
-      Object.assign(this, obj);
-    }
-  }
+    id!:number;
+    contenu!:string;
+    time!:Time;
+    //utilisateur:Utilisateur= new Utilisateur();
+    canal:Canal=new Canal();
 }

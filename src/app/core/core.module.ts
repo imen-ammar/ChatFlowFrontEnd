@@ -5,31 +5,22 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { RouterModule } from '@angular/router';
 import { UiModule } from '../ui/ui.module';
-import { PageListCanalComponent } from '../canal/pages/page-list-canal/page-list-canal.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
     FormMessageComponent,
     HeaderComponent,
-    NavComponent,
-
-
+    NavComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    ReactiveFormsModule
-
+    RouterModule
   ],
   exports: [
     FormMessageComponent,
     HeaderComponent,
-    NavComponent,UiModule,
-
-
+    NavComponent,
+    UiModule
   ]
 })
 export class CoreModule { }
