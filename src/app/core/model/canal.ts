@@ -9,7 +9,4 @@ constructor(obj ?: Partial<Canal>) {
     }
 
 }
-
-
-
 }

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageListCanalComponent } from './canal/pages/page-list-canal/page-list-canal.component';
 import { CanalComponent } from './canal/components/canal/canal.component';
 import { CanalModule } from './canal/canal.module';
+import { UiModule } from './ui/ui.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CanalModule } from './canal/canal.module';
     CoreModule,
     AppRoutingModule,
     HttpClientModule,
-    CanalModule
+    CanalModule,
+    UiModule
   ],
 
   providers: [],
