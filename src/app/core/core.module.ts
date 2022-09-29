@@ -6,6 +6,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { RouterModule } from '@angular/router';
 import { UiModule } from '../ui/ui.module';
 import { PageListCanalComponent } from '../canal/pages/page-list-canal/page-list-canal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { PageListCanalComponent } from '../canal/pages/page-list-canal/page-list
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule
 
   ],
   exports: [

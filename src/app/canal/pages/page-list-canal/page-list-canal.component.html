@@ -1,17 +1,53 @@
-
-
-
-<button (click)="onGetAllCanal()" class="btn btn-danger" routerLink="/canal">Afficher</button>
-
-<div class="container" *ngIf="canal">
-  <ul *ngFor="let c of canal ">
-    <li>{{c.nom}}</li>
-  </ul>
-
-
-
-
+<div id="canalList" class="canal-list">
+  <div class="btn-top-add">
+    <a routerLink="/add-canal" routerLinkActive="active" class="btn btn-outline-secondary" title="Cliquer pour ajouter un canal">➕</a>
+    <!-- <a routerLink=""><button type="button"  title="Cliquer pour ajouter un canal">➕ Ajouter</button></a> -->
+  </div>
+    <ul class="list-unstyled chat-list mt-2 mb-0">
+        <li *ngFor="let c of canaux " class="clearfix" style="border: 1px solid #eee;border-radius: 8px;background: #eee;margin-bottom: 7px;" (click)="fixerCanalEtRecupererMessagesByCanal(c.id, c.nom)">
+            <span>
+                #
+            </span>
+            <div class="about">
+                <div class="">{{c.nom}}</div>
+            </div>
+        </li>
+    </ul>
 </div>
-
-<a routerLink="/add-canal" routerLinkActive="active" >add canal</a>
-
+<div class="chat" *ngIf ="!messages">
+    <h1>Veuiller séléctionner un canal svp</h1>
+</div>
+<div class="chat" *ngIf="messages">
+  <div class="chat-header clearfix">
+      <div class="row">
+          <div class="col-lg-6">
+              <div class="chat-about">
+                  <h6 class="m-b-0">{{nomCanal}}</h6>
+              </div>
+          </div>
+          <div class="col-lg-6 hidden-sm text-right">
+              <a class="btn btn-outline-secondary">🖊️</a>
+              <a class="btn btn-outline-secondary">🗑️</a>
+          </div>
+      </div>
+  </div>
+  <div class="chat-history">
+      <ul class="m-b-0">
+          <li class="clearfix" *ngFor="let m of messages ">
+              <div class="message-data">
+                  <span class="message-data-time">{{m.time}}</span>
+              </div>
+              <div class="message my-message">{{m.contenu}}</div>
+          </li>
+      </ul>
+  </div>
+  <div class="chat-message clearfix">
+      <div class="input-group mb-0">
+          <div class="input-group-prepend" (click)="envoyerMessage(messagetext.value)">
+              <span class="input-group-text">✉️</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Saisissez votre message ..." #messagetext (keyup.enter)="envoyerMessage(messagetext.value)">
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

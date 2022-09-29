@@ -22,11 +22,11 @@ export class PageAjouterCanalComponent implements OnInit {
   onAddCanal(obj:Canal){
     // console.log(obj, "object add canal")
 
-      this.canalServie.addCanal(obj).subscribe(data=>{
+      /*this.canalServie.addCanal(obj).subscribe(data=>{
         this.router.navigate(['ajoutcanal']);
         console.log(data)
 
-      })
+      })*/
 
     }
 

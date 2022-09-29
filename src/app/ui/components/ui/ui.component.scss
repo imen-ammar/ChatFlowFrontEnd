@@ -97,7 +97,7 @@ body{
   width: 100%;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
 }
-.chat-app .people-list {
+.canal-list {
   width: 280px;
   position: absolute;
   left: 0;
@@ -106,53 +106,64 @@ body{
   z-index: 7
 }
 
-.chat-app .chat {
+.chat {
   margin-left: 280px;
   border-left: 1px solid #eaeaea
 }
 
-.people-list {
+.canal-list {
   -moz-transition: .5s;
   -o-transition: .5s;
   -webkit-transition: .5s;
   transition: .5s
 }
 
-.people-list .chat-list li {
+.canal-list .chat-list li {
   padding: 10px 15px;
   list-style: none;
   border-radius: 3px
 }
 
-.people-list .chat-list li:hover {
+.canal-list .chat-list li:hover {
   background: #efefef;
   cursor: pointer
 }
 
-.people-list .chat-list li.active {
+.canal-list .chat-list li.active {
   background: #efefef
 }
 
-.people-list .chat-list li .name {
+.canal-list .chat-list li .name {
   font-size: 15px
 }
 
-.people-list .chat-list img {
-  width: 45px;
-  border-radius: 50%
+.canal-list .chat-list span {
+  width: 30px;
+  border-radius: 50%;
+  font-size: 25px;
+    text-align: center;
+    color: #5f03f3;
 }
 
-.people-list img {
+.canal-list span {
   float: left;
   border-radius: 50%
 }
 
-.people-list .about {
-  float: left;
-  padding-left: 8px
+.canal-list .about {
+    float: left;
+    padding-left: 8px;
+    margin: 6px 0 0 0;
+    display: block;
+    font-weight: 600;
 }
-
-.people-list .status {
+.btn-top-add{
+  height: 45px;
+}
+.btn-top-add button{
+  float: right;
+}
+.canal-list .status {
   color: #999;
   font-size: 13px
 }
@@ -293,48 +304,55 @@ body{
   clear: both;
   height: 0
 }
-
+.input-group-prepend{
+  float: right;
+  position: absolute!important;
+  z-index: 9999!important;
+  right: 0px!important;
+  cursor: pointer;
+}
 @media only screen and (max-width: 767px) {
-  .chat-app .people-list {
+  .canal-list {
       height: 465px;
       width: 100%;
       overflow-x: auto;
       background: #fff;
       left: -400px;
-      display: none
+
   }
-  .chat-app .people-list.open {
+
+  .canal-list.open {
       left: 0
   }
-  .chat-app .chat {
+  .chat {
       margin: 0
   }
-  .chat-app .chat .chat-header {
+  .chat .chat-header {
       border-radius: 0.55rem 0.55rem 0 0
   }
-  .chat-app .chat-history {
+  .chat-history {
       height: 300px;
       overflow-x: auto
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  .chat-app .chat-list {
+  .chat-list {
       height: 650px;
       overflow-x: auto
   }
-  .chat-app .chat-history {
+  .chat-history {
       height: 600px;
       overflow-x: auto
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-  .chat-app .chat-list {
+  .chat-list {
       height: 480px;
       overflow-x: auto
   }
-  .chat-app .chat-history {
+  .chat-history {
       height: calc(100vh - 350px);
       overflow-x: auto
   }

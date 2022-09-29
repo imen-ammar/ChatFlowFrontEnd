@@ -9,6 +9,7 @@ import { PageSupprimerCanalComponent } from './pages/page-supprimer-canal/page-s
 import { PageListCanalComponent } from './pages/page-list-canal/page-list-canal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormCanalComponent } from './components/form-canal/form-canal.component';
+import { FormMessageComponent } from '../core/components/form-message/form-message.component';
 
 
 @NgModule({
