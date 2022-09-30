@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Canal } from 'src/app/core/model/canal';
 import { Message } from 'src/app/core/model/message';
 import { CanalService } from '../../service/canal.service';
+import { MessageService } from '../../service/message.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class PageListCanalComponent implements OnInit {
   nomCanal?: string;
   message? : Message;
 
-  constructor(private canalServie: CanalService) { }
+  constructor(private canalServie: CanalService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getAllCanal();
@@ -42,7 +43,7 @@ export class PageListCanalComponent implements OnInit {
   }
 
   recupererMessagesByCanal(idCanal: number) {
-    this.canalServie.recupererMessageByIdCanal(idCanal).subscribe(data => {
+    this.messageService.recupererMessageByIdCanal(idCanal).subscribe(data => {
       this.messages = data;
     })
   }
@@ -51,7 +52,7 @@ export class PageListCanalComponent implements OnInit {
     this.message = new Message();
     this.message.canal.id=this.idCanal!;
     this.message.contenu=contenu;
-    this.canalServie.envoyerMessage(this.message).subscribe(data => {
+    this.messageService.envoyerMessage(this.message).subscribe(data => {
       this.recupererMessagesByCanal(this.idCanal!);
     });
   }
@@ -61,9 +62,10 @@ export class PageListCanalComponent implements OnInit {
     let canal:Canal = new Canal();
     canal.id=this.idCanal!;
     canal.nom=nom_canal!;
-    if (nom_canal != null || nom_canal != "") {
+    if (nom_canal != null && nom_canal != "" && nom_canal != this.nomCanal) {
       this.canalServie.modifierCanal(canal!).subscribe(data => {
         this.getAllCanal();
+        this.nomCanal=nom_canal!;
       })
     }
   }
