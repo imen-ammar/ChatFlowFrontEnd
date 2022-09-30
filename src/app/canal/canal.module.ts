@@ -7,6 +7,7 @@ import { PageAjouterCanalComponent } from './pages/page-ajouter-canal/page-ajout
 import { PageModifierCanalComponent } from './pages/page-modifier-canal/page-modifier-canal.component';
 import { PageSupprimerCanalComponent } from './pages/page-supprimer-canal/page-supprimer-canal.component';
 import { PageListCanalComponent } from './pages/page-list-canal/page-list-canal.component';
+import { IconsModule } from '../icons/icons.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PageListCanalComponent } from './pages/page-list-canal/page-list-canal.
   ],
   imports: [
     CommonModule,
-    CanalRoutingModule
+    CanalRoutingModule,
+    IconsModule
   ],
   exports: [
     CanalComponent,

@@ -1,7 +1,7 @@
 
 <!--
 <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
-   
+
 <ng-template #mymodal let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
@@ -29,14 +29,18 @@
                 #
             </span>
             <div class="about">
-                <div class="">{{c.nom}}</div>                                            
+                <div class="">{{c.nom}}</div>
             </div>
         </li>
     </ul>
 </div>
+
 <div class="chat" *ngIf ="!messages">
     <h1>Veuillez séléctionner votre canal svp !</h1>
 </div>
+
+
+
 <div class="chat" *ngIf="messages">
   <div class="chat-header clearfix">
       <div class="row">
@@ -46,8 +50,8 @@
               </div>
           </div>
           <div class="col-lg-6 hidden-sm text-right">
-              <a class="btn btn-outline-secondary" (click)="modifierCanal()">🖊️</a>
-              <a class="btn btn-outline-secondary" (click)="supprimerCanal()">🗑️</a>
+              <a class="btn btn-outline-secondary" (click)="modifierCanal()"><app-icon-edit></app-icon-edit></a>
+              <a class="btn btn-outline-secondary" (click)="supprimerCanal()"><app-icon-delete></app-icon-delete></a>
           </div>
       </div>
   </div>
@@ -57,16 +61,16 @@
               <div class="message-data">
                   <span class="message-data-time">{{m.time}}</span>
               </div>
-              <div class="message my-message">{{m.contenu}}</div>                                    
-          </li>                              
+              <div class="message my-message">{{m.contenu}}</div>
+          </li>
       </ul>
   </div>
   <div class="chat-message clearfix">
       <div class="input-group mb-0">
-          <div class="input-group-prepend" (click)="envoyerMessage(messagetext.value)">
+          <div class="input-group-prepend" (click)="envoyerMessage(messagetext.value); messagetext.value='' ">
               <span class="input-group-text" style="border: 1px solid #ddd;background: #17a2b8;">✉️</span>
           </div>
-          <input type="text" class="form-control" placeholder="Saisissez votre message ..." id="contenuMessage" #messagetext (keyup.enter)="envoyerMessage(messagetext.value);messagetext.value=''">                                    
+          <input type="text" class="form-control" placeholder="Saisissez votre message ..." id="contenuMessage" #messagetext (keyup.enter)="envoyerMessage(messagetext.value);messagetext.value=''">
       </div>
   </div>
 </div>

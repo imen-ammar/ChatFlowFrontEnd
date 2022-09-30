@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
+    "compodoc:serve": "compodoc -s",
+    "compodoc": "compodoc -p tsconfig.json -o -s"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +22,11 @@
     "@angular/platform-browser": "~13.0.0-next.0",
     "@angular/platform-browser-dynamic": "~13.0.0-next.0",
     "@angular/router": "~13.0.0-next.0",
+    "@compodoc/compodoc": "^1.1.19",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "bootstrap": "^5.2.1",
+    "font-awesome": "^4.7.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
